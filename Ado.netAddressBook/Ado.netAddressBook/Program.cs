@@ -31,6 +31,10 @@
                     addressBookRepo.AddContact(model);
                     break;
 
+                case 4:
+                    addressBookRepo.RetriveAllContact();
+                    break;
+
 
 
             }
