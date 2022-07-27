@@ -136,7 +136,7 @@ namespace DAY33_ADO.NETAddressBookPP
             int effectedRow = command.ExecuteNonQuery();
             if (effectedRow == 1)
             {
-                string query = @"Select Address from AddressBook where FirstName='Sahana';";
+                string query = @"Select Address from AddressBook where FirstName='Sahid';";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 object res = cmd.ExecuteScalar();
                 connection.Close();
@@ -153,7 +153,7 @@ namespace DAY33_ADO.NETAddressBookPP
                 AddressBookModel addressmodel = new AddressBookModel();
                 using (this.connection)
                 {
-                    string Query = @"Delete from AddressBook where FirstName='Shree';";
+                    string Query = @"Delete from AddressBook where FirstName='Gurpreet';";
                     SqlCommand cmd = new SqlCommand(Query, this.connection);
                     this.connection.Open();
                     SqlDataReader datareader = cmd.ExecuteReader();
@@ -191,6 +191,30 @@ namespace DAY33_ADO.NETAddressBookPP
             {
                 Console.WriteLine(e.Message);
             }
+        }
+        public int CountOfEmployeeDetailsByCity()
+        {
+            int count;
+            SqlConnection Connection = new SqlConnection(@"Data Source=(localdb)\ProjectModels;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+            connection.Open();
+            string query = @"Select count(*) from AddressBook where City='Port Blair';";
+            SqlCommand command = new SqlCommand(query, connection);
+            object res = command.ExecuteScalar();
+            connection.Close();
+            int Count = (int)res;
+            return Count;
+        }
+        public int CountOfEmployeeDetailsByState()
+        {
+            int count;
+            SqlConnection Connection = new SqlConnection(@"Data Source=(localdb)\ProjectModels;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+            connection.Open();
+            string query = @"Select count(*) from AddressBook where State='Andaman';";
+            SqlCommand command = new SqlCommand(query, connection);
+            object res = command.ExecuteScalar();
+            connection.Close();
+            int Count = (int)res;
+            return Count;
         }
     }
 }
