@@ -330,6 +330,16 @@ namespace DAY33_ADO.NETAddressBookPP
             int Count = (int)res;
             return Count;
         }
-    
+        public void AddContactAsFriendAndFamily()
+        {
+            SqlConnection Connection = new SqlConnection(@"Data Source=(localdb)\ProjectModels;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+            connection.Open();
+            string query = @"Insert into AddressBook Values ('karthik','Raj','Port Blair','Port Blair','Andaman','744106','9256985743','karthik@gmail.com','School','Friend'),
+                            ('ganesh','Kumar','Port blair','port blair','Andaman','744112','8596742365','ganesh@gmail.com','Family','Brother');";
+            SqlCommand command = new SqlCommand(query, connection);
+            object res = command.ExecuteScalar();
+            connection.Close();
+        }
+
     }
 }

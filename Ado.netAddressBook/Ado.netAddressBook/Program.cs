@@ -5,7 +5,8 @@
         public static void Main(string[] args)
         {
 
-            Console.WriteLine("Select option\n1.Create AddrssBookServiceDatabase\n2.CreateTable\n3.InsertTntoTable");
+            Console.WriteLine("Select option\n1.Create AddrssBookServiceDatabase\n2.CreateTable\n3.InsertTntoTable\n" +
+                "4.RetriveAllContact\n5.UpdatingToExisting\n5.updateData\n6.DeletingThedata\n7.CountingDataUsingStateOrCity\n8.SortingAlphabetically");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookModel model = new AddressBookModel();
             AddressBookRepo addressBookRepo = new AddressBookRepo();
