@@ -51,6 +51,11 @@
                     int CountState = addressBookRepo.CountOfEmployeeDetailsByState();
                     Console.WriteLine("Count of Records for given State :" + CountState);
                     break;
+
+                case 8:
+                    Console.WriteLine("Get Contacts for given City alphabetically sorted by FirstName");
+                    addressBookRepo.GetContactsInAlphabeticalOrderOfFirstName();
+                    break;
             }
 
         }
