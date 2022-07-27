@@ -40,6 +40,10 @@
                     Console.WriteLine("updated sucsessFully");
                     break;
 
+                case 6:
+                    addressBookRepo.DeletingTheContactUsingFirst();
+                    Console.WriteLine("deleted the data sucessfully");
+                    break;
             }
         }
     }
