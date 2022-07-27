@@ -318,5 +318,18 @@ namespace DAY33_ADO.NETAddressBookPP
                 Console.WriteLine(e.Message);
             }
         }
+        public int CountOfEmployeeDetailsByType()
+        {
+            int count;
+            SqlConnection Connection = new SqlConnection(@"Data Source=(localdb)\ProjectModels;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+            connection.Open();
+            string Query = @"Select count(*) from AddressBook where AddressBookType='Friend';";
+            SqlCommand command = new SqlCommand(Query, connection);
+            object res = command.ExecuteScalar();
+            connection.Close();
+            int Count = (int)res;
+            return Count;
+        }
+    
     }
 }
