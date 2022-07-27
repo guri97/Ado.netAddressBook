@@ -35,7 +35,10 @@
                     addressBookRepo.RetriveAllContact();
                     break;
 
-
+                case 5:
+                    addressBookRepo.updateEmployeeDetails();
+                    Console.WriteLine("updated sucsessFully");
+                    break;
 
             }
         }
